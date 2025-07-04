@@ -118,3 +118,42 @@ IPv6 is the successor to IPv4 and uses **128-bit** addresses.
   **≈ 3.4 × 10³⁸ addresses**, enough for every device on Earth.
 
 ============================================================
+
+
+========================= Exercises =========================
+
+Exercise 1:
+We have a PC with IP address: 45.110.24.10/8
+
+- Class type of IP           : Class A
+- Network Address            : 45.0.0.0/8
+- Broadcast Address          : 45.255.255.255
+- Maximum number of hosts    : 2^24 - 2 = 16,777,214 devices
+- First usable address       : 45.0.0.1
+- Last usable address        : 45.255.255.254
+
+------------------------------------------------------------
+
+Exercise 2:
+We have a PC with IP address: 162.210.65.9/16
+
+- Class type of IP           : Class B
+- Network Address            : 162.210.0.0/16
+- Broadcast Address          : 162.210.255.255
+- Maximum number of hosts    : 2^16 - 2 = 65,534 devices
+- First usable address       : 162.210.0.1
+- Last usable address        : 162.210.255.254
+
+------------------------------------------------------------
+
+Exercise 3:
+We have a PC with IP address: 198.145.6.29/24
+
+- Class type of IP           : Class C
+- Network Address            : 198.145.6.0/24
+- Broadcast Address          : 198.145.6.255
+- Maximum number of hosts    : 2^8 - 2 = 254 devices
+- First usable address       : 198.145.6.1
+- Last usable address        : 198.145.6.254
+
+============================================================
