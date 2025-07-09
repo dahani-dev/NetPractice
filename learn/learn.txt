@@ -1,3 +1,4 @@
+
 ======================== IP Address ========================
 
 An IP address consists of 4 octets, and each octet contains 8 bits.
@@ -189,13 +190,16 @@ Exercise 3:
 We have a PC with IP address: 192.168.1.130/25
 
 - Network Address            : 192.168.1.130/25
-- Subnet Mask                : 255.255.255.128 (2^32 - CIDR) (2^32 - 25 = 2^7 = 128) look at the table below
+- Subnet Mask                : 255.255.255.128
 - Broadcast Address          : 192.168.1.255 (Broadcast = Network address + total IPs in the subnet - 1)
 - Maximum number of hosts    : 2^7 - 2 = 126 devices
 - First usable address       : 192.168.1.131
 - Last usable address        : 192.168.1.254
 
 ============================================================
+
+
+=================== CIDR Block Table ========================
 
 Prefix | Block Size (IPs)     | Block Size (Decimal)        | Description
 -------|----------------------|-----------------------------|-------------------------------
@@ -232,3 +236,53 @@ Prefix | Block Size (IPs)     | Block Size (Decimal)        | Description
 /31    | 2^1 = 2              | 0.0.0.2                     | Point-to-point links
 /32    | 2^0 = 1              | 0.0.0.1                     | Single IP (host address)
 
+============================================================
+
+
+============= Custom Subnetting Example 1 ===================
+
+We have a network: 172.214.0.0/16  
+Original Subnet Mask: 255.255.0.0 (binary: 11111111.11111111.00000000.00000000)  
+We need at least 500 subnets.  
+So, calculate: 2^9 = 512 → we need 9 extra bits.  
+New prefix: /16 + 9 = **/25**  
+New Subnet Mask: 255.255.255.128 (binary: 11111111.11111111.11111111.10000000)  
+
+Block size = 256 - 128 = 128
+
+Example Subnets:
+
+- 1st subnet  : 172.214.0.0/25
+- 2nd subnet  : 172.214.0.128/25
+- 3rd subnet  : 172.214.1.0/25
+- 4th subnet  : 172.214.1.128/25
+- ...
+- 500th subnet: 172.214.124.128/25
+
+Formula to get any subnet:
+= Network IP + (Subnet Number × Block Size)
+= 172.214.0.0 + (N × 128)
+
+============= Custom Subnetting Example 2 ===================
+
+We have a network: 172.18.0.0/16  
+Original Subnet Mask: 255.255.0.0 (binary: 11111111.11111111.00000000.00000000)  
+We need at least 250 subnets.  
+So, calculate: 2^8 = 256 → we need 8 extra bits.  
+New prefix: /16 + 8 = **/24**  
+New Subnet Mask: 255.255.255.0 (binary: 11111111.11111111.11111111.00000000)  
+
+Block size = 256 - 0 = 256
+
+Example Subnets:
+
+- 1st subnet  : 172.18.0.0/24
+- 2nd subnet  : 172.18.1.0/24
+- 3rd subnet  : 172.18.2.0/24
+- 4th subnet  : 172.18.3.0/24
+- ...
+- 250th subnet: 172.18.250.0/24
+
+Formula to get any subnet:
+= Network IP + (Subnet Number × Block Size)
+= 172.18.0.0 + (N × 256)
