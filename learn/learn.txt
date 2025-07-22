@@ -311,8 +311,8 @@ system into seven distinct layers.
    - Interface between user and network.
 
 2- **Presentation Layer**  
-   - Translates data to binary.  
-   - Performs data compression.  
+   - Format data.
+   - Performs data compression.
    - Encrypts data using SSL/TLS before transmission.
 
 3- **Session Layer**  
@@ -321,12 +321,12 @@ system into seven distinct layers.
    - Manages transmission modes.
 
 4- **Transport Layer**  
-   - Ensures reliable data transfer.  
+   - Ensures reliable data transfer. 
    - Determines the protocol: TCP (reliable) or UDP (fast, no guarantee).  
    - Segmentation and reassembly of data.
 
 5- **Network Layer**  
-   - Adds logical addressing (IP address of sender and receiver).  
+   - Adds logical addressing (IP address of sender and receiver). 
    - Forms packets.  
    - Handles routing: choosing the best path for data delivery.
 
@@ -340,5 +340,34 @@ system into seven distinct layers.
    - Includes hardware like switches, cables, NICs.  
    - Responsible for voltage levels, timing, and signal transmission.
 
-============================================================
+======================== TCP/IP Model ========================
+
+The TCP/IP (Transmission Control Protocol/Internet Protocol) model 
+is a simplified framework used for modern networking. It consists 
+of 4 layers (sometimes described as 5), mapping roughly to the OSI model.
+
+1- **Application Layer**  
+   - Combines OSI's Application, Presentation, and Session layers.  
+   - Provides services directly to the user (HTTP, FTP, SMTP, DNS, etc.).  
+   - Handles data encoding, encryption, and session management.
+
+2- **Transport Layer**  
+   - Ensures end-to-end communication between devices.  
+   - Protocols: TCP (reliable) and UDP (unreliable, fast).  
+   - Handles segmentation, flow control, and error handling.
+
+3- **Internet Layer**  
+   - Maps to the OSI's Network layer.  
+   - Responsible for logical addressing using IP (IPv4/IPv6).  
+   - Handles routing and path determination (best route selection).  
+   - Protocols: IP, ICMP, ARP.
+
+4- **Network Access Layer** (also called Link or Host-to-Network)  
+   - Combines OSI's Data Link and Physical layers.  
+   - Handles MAC addressing and hardware-level transmission.  
+   - Responsible for frame formatting, physical addressing, and media access.  
+   - Protocols: Ethernet, Wi-Fi, PPP, etc.
+
+==============================================================
+
 
